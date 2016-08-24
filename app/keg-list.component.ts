@@ -12,10 +12,20 @@ import {EmptyPipe} from './empty.pipe';
   pipes: [EmptyPipe],
   directives: [KegComponent, EditKegDetailsComponent, NewKegComponent],
   template: `
-  <select (change)="onChange($event.target.value)" class="filter">
-    <option value="10">Show Close to Empty</option>
-    <option value="125">Show All</option>
-  </select>
+  <label>Filter Inventory:
+    <select (change)="onChange($event.target.value)" class="filter">
+      <option selected value="125">Show All</option>
+      <option value="10">Show Close to Empty</option>
+    </select>
+  </label>
+  <div class="row header-row">
+    <div class="col-xs-3"><h3>Name</h3></div>
+    <div class="col-xs-3"><h3>Brewing Company</h3></div>
+    <div class="col-xs-1"><h3>Price</h3></div>
+    <div class="col-xs-1"><h3>Alc.</h3></div>
+    <div class="col-xs-1"><h3>Pints</h3></div>
+    <div class="col-xs-3"><h3></h3></div>
+  </div>
   <keg-display *ngFor="#currentKeg of kegList | empty:selectedEmpty"
     (click)="kegClicked(currentKeg)"
     [class.selected]="currentKeg === selectedKeg"
