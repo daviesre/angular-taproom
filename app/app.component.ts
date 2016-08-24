@@ -21,7 +21,8 @@ export class AppComponent {
     this.kegs = [
       new Keg("Dragon's Blood Vermillion Ale", "Highpass Brewing Co.", 8, "6.5%"),
       new Keg("Excalibur", "Humble Monk Distillery", 9, "7%"),
-      new Keg("Eye of Newt Brew", "Witch's Tooth", 5, "12.5%")
+      new Keg("Eye of Newt Brew", "Witch's Tooth", 5, "12.5%"),
+      new Keg("Shady Brownie Ale", "Windwood Brewing", 6, "3.5%")
     ];
   }
   kegWasSelected(clickedKeg: Keg): void {
